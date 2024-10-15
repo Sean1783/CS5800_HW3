@@ -19,8 +19,8 @@ object "<u>c1Textbook:Textbook</u>" as cs1t{
     title = "CleanCode:A Handbook of Agile Software Craftsmanship"
 }
 
-cs1 *-- cs1i
-cs1 *-- cs1t
+cs1 o-- cs1i
+cs1 o-- cs1t
 
 
 @enduml
