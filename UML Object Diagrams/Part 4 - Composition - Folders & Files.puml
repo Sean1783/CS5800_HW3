@@ -1,0 +1,66 @@
+@startuml
+'https://plantuml.com/object-diagram
+
+
+object "<u>php_demo1:Folder</u>" as phpFolder{
+    name = "php_demo1"
+    subfolders = [Source Files, Include Path, Remote Files]
+}
+
+object "<u>.phalcon:Folder</u>" as phalconFolder{
+    name = ".phalcon"
+}
+
+object "<u>cache:Folder</u>" as cacheFolder{
+    name = "cache"
+}
+
+object "<u>public:Folder</u>" as publicFolder{
+    name = "public"
+    files = [.htaccess, .htrouter.php, index.html]
+}
+
+
+object "<u>Include Path:Folder</u>" as includeFolder{
+    name = "Include Path"
+}
+
+object "<u>Remote Files:Folder</u>" as remoteFolder{
+    name = "Remote Files"
+}
+
+object "<u>Source Files:Folder</u>" as SourceFolder{
+    name = "Source Files"
+    subfolders = [.phalcon, app, cache, public]
+}
+
+phpFolder *-- SourceFolder
+phpFolder *-- remoteFolder
+phpFolder *-- includeFolder
+
+
+SourceFolder *-- phalconFolder
+SourceFolder *-- cacheFolder
+SourceFolder *-- publicFolder
+
+
+object "<u>.htaccess:File</u>" as htFile{
+    name = ".htaccess"
+}
+
+object "<u>.htrouter.php:File</u>" as routerFile{
+    name = ".htrouter.php"
+}
+
+object "<u>index.html:File</u>" as indexFile{
+    name = "index.html"
+}
+
+publicFolder *-- htFile
+publicFolder *-- routerFile
+publicFolder *-- indexFile
+
+
+
+
+@enduml

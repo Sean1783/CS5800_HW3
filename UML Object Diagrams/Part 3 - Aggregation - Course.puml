@@ -1,0 +1,26 @@
+@startuml
+'https://plantuml.com/object-diagram
+
+object "<u>c1:Course</u>" as cs1{
+    name = "CS5800 - Advanced Software Engineering"
+    instructors = [c1Instructor]
+    textbooks = [c1Textbook]
+}
+
+object "<u>c1Instructor:Instructor</u>" as cs1i{
+    firstName = "Nima"
+    lastName = "Davarpanah"
+    officeNumber = "3-2636"
+}
+
+object "<u>c1Textbook:Textbook</u>" as cs1t{
+    author = "Robert Cecil Martin"
+    publisher = "Pearson"
+    title = "CleanCode:A Handbook of Agile Software Craftsmanship"
+}
+
+cs1 *-- cs1i
+cs1 *-- cs1t
+
+
+@enduml

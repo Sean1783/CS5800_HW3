@@ -1,0 +1,57 @@
+@startuml
+'https://plantuml.com/class-diagram
+
++abstract class Employee {
+    -String firstName
+    -String lastName
+    -String socialSecurityNumber
+    +String getFirstName()
+    +void setFirstName(String)
+    +String getLastName()
+    +void setLastName(String)
+    +String getSocialSecurityNumber()
+    +void setSocialSecurityNumber(String)
+    +String toString()
+}
+
++class SalariedEmployee {
+    ~int weeklySalary
+    +int getWeeklySalary()
+    +void setWeeklySalary(int)
+    +String toString()
+}
+
++class HourlyEmployee {
+    ~int wage;
+    ~int hoursWorked
+    +int getWage()
+    +void setWage(int)
+    +int getHoursWorked()
+    +void setHoursWorked(int)
+    +String toString()
+}
+
++class CommissionEmployee {
+    ~int commissionRate
+    ~int grossSales
+    +int getCommissionRate()
+    +void setCommissionRate(int)
+    +int getGrossSales()
+    +void setGrossSales(int)
+    +String toString()
+}
+
++class BaseEmployee {
+    ~int baseSalary
+    +int getBaseSalary()
+    +void setBaseSalary(int)
+    +String toString()
+}
+
+Employee <|-- SalariedEmployee
+Employee <|-- HourlyEmployee
+Employee <|-- CommissionEmployee
+Employee <|- BaseEmployee
+
+
+@enduml

@@ -1,0 +1,30 @@
+@startuml
+'https://plantuml.com/object-diagram
+
+object "<u>titanic:Ship</u>" as ts{
+    shipName = "Titanic"
+    yearBuilt = "March31st,1909"
+}
+
+object "<u>everGiven:CargoShip</u>" as egs{
+    shipName = "EverGiven"
+    yearBuilt = "September25th,2018"
+    cargoCapacityInTonnage = 220940
+}
+
+object "<u>mvGemini:CruiseShip</>" as mvs{
+    shipName = "MVGemini"
+    yearBuilt = "May30th,1991"
+    maxNumberPassengers = 100
+}
+
+map ships {
+ 0 *--> ts
+ 1 *--> mvs
+ 2 *--> egs
+
+}
+
+
+
+@enduml
